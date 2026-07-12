@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,7 @@ import {
 } from "@/components/ui/sheet";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 md:h-24 md:px-6">
@@ -73,9 +75,12 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <Sheet>
           <SheetTrigger asChild>
-            <button className="rounded-lg p-2 hover:bg-slate-100 lg:hidden">
-              <Menu className="h-7 w-7" />
-            </button>
+           <button
+  onClick={() => setMenuOpen(true)}
+  className="rounded-lg p-2 transition hover:bg-slate-100 lg:hidden"
+>
+  <Menu className="h-7 w-7 text-slate-700" />
+</button>
           </SheetTrigger>
 
           <SheetContent side="right" className="w-[280px]">
@@ -124,6 +129,88 @@ export default function Navbar() {
         </Sheet>
 
       </div>
+      {menuOpen && (
+  <div className="fixed inset-0 z-[100] lg:hidden">
+    {/* Overlay */}
+    <div
+      className="absolute inset-0 bg-black/40"
+      onClick={() => setMenuOpen(false)}
+    />
+
+    {/* Drawer */}
+    <div className="absolute right-0 top-0 h-full w-72 bg-white shadow-2xl">
+
+      <div className="flex items-center justify-between border-b p-5">
+        <h2 className="text-xl font-bold text-blue-700">
+          GB GOYAL BROTHERS
+        </h2>
+
+        <button
+          onClick={() => setMenuOpen(false)}
+          className="text-3xl"
+        >
+          ×
+        </button>
+      </div>
+
+      <div className="flex flex-col p-6">
+
+        <Link
+          to="/"
+          onClick={() => setMenuOpen(false)}
+          className="border-b py-4 text-lg font-semibold"
+        >
+          Home
+        </Link>
+
+        <Link
+          to="/products"
+          onClick={() => setMenuOpen(false)}
+          className="border-b py-4 text-lg font-semibold"
+        >
+          Products
+        </Link>
+
+        <Link
+          to="/about"
+          onClick={() => setMenuOpen(false)}
+          className="border-b py-4 text-lg font-semibold"
+        >
+          About
+        </Link>
+
+        <Link
+          to="/contact"
+          onClick={() => setMenuOpen(false)}
+          className="border-b py-4 text-lg font-semibold"
+        >
+          Contact
+        </Link>
+
+        <a href="tel:+919311226400" className="mt-8">
+          <Button
+            variant="outline"
+            className="w-full border-blue-700 text-blue-700"
+          >
+            <Phone className="mr-2 h-4 w-4" />
+            Call Now
+          </Button>
+        </a>
+
+        <Link
+          to="/quote"
+          onClick={() => setMenuOpen(false)}
+          className="mt-4"
+        >
+          <Button className="w-full bg-blue-700 text-white">
+            Request Quote
+          </Button>
+        </Link>
+
+      </div>
+    </div>
+  </div>
+)}
     </header>
   );
 }
