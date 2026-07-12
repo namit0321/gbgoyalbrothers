@@ -130,64 +130,99 @@ export default function Navbar() {
 
       </div>
       {menuOpen && (
-  <div className="fixed inset-0 z-[100] lg:hidden">
-    {/* Overlay */}
+  <div className="fixed inset-0 z-[999] lg:hidden">
+
+    {/* Dark Overlay */}
     <div
-      className="absolute inset-0 bg-black/40"
       onClick={() => setMenuOpen(false)}
+      className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
     />
 
     {/* Drawer */}
-    <div className="absolute right-0 top-0 h-full w-72 border-l border-slate-200 bg-[#ffffff] shadow-2xl">
+    <div
+      className="
+        absolute
+        top-0
+        right-0
+        h-screen
+        w-[85%]
+        max-w-[340px]
+        bg-white
+        shadow-2xl
+        border-l
+        border-slate-200
+        animate-[slideIn_.25s_ease]
+      "
+    >
 
-      <div className="flex items-center justify-between border-b p-5">
-        <h2 className="text-xl font-bold text-blue-700">
-          GB GOYAL BROTHERS
-        </h2>
+      {/* Header */}
+      <div className="flex items-center justify-between border-b px-6 py-5">
+
+        <div>
+
+          <h2 className="text-xl font-black text-blue-700">
+            GB GOYAL BROTHERS
+          </h2>
+
+          <p className="mt-1 text-xs uppercase tracking-[0.25em] text-slate-500">
+            A UNIT OF DISTRIBUTIONS
+          </p>
+
+        </div>
 
         <button
           onClick={() => setMenuOpen(false)}
-          className="text-3xl"
+          className="rounded-full p-2 transition hover:bg-slate-100"
         >
-          ×
+          <span className="text-3xl leading-none">×</span>
         </button>
+
       </div>
 
-      <div className="flex flex-col p-6">
+      {/* Navigation */}
+
+      <div className="flex flex-col px-6 py-6">
 
         <Link
           to="/"
           onClick={() => setMenuOpen(false)}
-          className="border-b py-4 text-lg font-semibold"
+          className="border-b border-slate-200 py-4 text-lg font-semibold hover:text-blue-700"
         >
-          Home
+          🏠 Home
         </Link>
 
         <Link
           to="/products"
           onClick={() => setMenuOpen(false)}
-          className="border-b py-4 text-lg font-semibold"
+          className="border-b border-slate-200 py-4 text-lg font-semibold hover:text-blue-700"
         >
-          Products
+          📦 Products
         </Link>
 
         <Link
           to="/about"
           onClick={() => setMenuOpen(false)}
-          className="border-b py-4 text-lg font-semibold"
+          className="border-b border-slate-200 py-4 text-lg font-semibold hover:text-blue-700"
         >
-          About
+          ℹ️ About
         </Link>
 
         <Link
           to="/contact"
           onClick={() => setMenuOpen(false)}
-          className="border-b py-4 text-lg font-semibold"
+          className="border-b border-slate-200 py-4 text-lg font-semibold hover:text-blue-700"
         >
-          Contact
+          📞 Contact
         </Link>
 
-        <a href="tel:+919311226400" className="mt-8">
+      </div>
+
+      {/* Bottom Buttons */}
+
+      <div className="absolute bottom-6 left-6 right-6 space-y-3">
+
+        <a href="tel:+919311226400">
+
           <Button
             variant="outline"
             className="w-full border-blue-700 text-blue-700"
@@ -195,12 +230,12 @@ export default function Navbar() {
             <Phone className="mr-2 h-4 w-4" />
             Call Now
           </Button>
+
         </a>
 
         <Link
           to="/quote"
           onClick={() => setMenuOpen(false)}
-          className="mt-4"
         >
           <Button className="w-full bg-blue-700 text-white">
             Request Quote
@@ -208,7 +243,9 @@ export default function Navbar() {
         </Link>
 
       </div>
+
     </div>
+
   </div>
 )}
     </header>
