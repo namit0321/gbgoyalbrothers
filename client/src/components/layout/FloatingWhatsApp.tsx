@@ -20,8 +20,8 @@ Thank you.`
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50"
     >
-      <div className="flex items-center gap-3 rounded-full bg-green-600 px-5 py-4 text-white shadow-2xl transition hover:scale-105 hover:bg-green-700">
-        <MessageCircle className="h-6 w-6" />
+      <div className="flex items-center gap-2 rounded-full bg-green-600 px-4 py-3 text-sm text-white shadow-2xl transition hover:scale-105 hover:bg-green-700 md:gap-3 md:px-5 md:py-4 md:text-base">
+        <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />
         <span className="font-semibold">
           WhatsApp
         </span>
