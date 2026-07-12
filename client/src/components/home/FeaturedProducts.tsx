@@ -5,7 +5,7 @@ import { products } from "@/data/products";
 export default function FeaturedProducts() {
   const featuredProducts = products
     .filter((product) => product.featured)
-    .slice(0, 6);
+    .slice(0, 8);
 
   return (
     <section className="bg-slate-50 py-24">
@@ -18,16 +18,18 @@ export default function FeaturedProducts() {
           </p>
 
           <h2 className="mt-4 text-5xl font-black text-slate-900">
-            Best Selling Products
+            Featured Products
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-600">
-            Explore our most popular products from trusted brands.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+            Explore our premium collection of household, kitchenware,
+            storage, commercial and utility plastic products from
+            India's leading brands.
           </p>
         </div>
 
         {/* Products */}
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
 
           {featuredProducts.map((product) => (
             <Link
@@ -49,7 +51,7 @@ export default function FeaturedProducts() {
                     {product.brand}
                   </span>
 
-                  <h3 className="mt-4 text-2xl font-bold text-slate-900">
+                  <h3 className="mt-4 line-clamp-2 min-h-[64px] text-xl font-bold text-slate-900">
                     {product.name}
                   </h3>
 
@@ -57,7 +59,7 @@ export default function FeaturedProducts() {
                     {product.description}
                   </p>
 
-                  <Button className="mt-6 w-full bg-blue-700 hover:bg-blue-800">
+                  <Button className="mt-6 w-full bg-blue-700 text-white hover:bg-blue-800 hover:text-white">
                     View Details
                   </Button>
 
@@ -67,6 +69,18 @@ export default function FeaturedProducts() {
             </Link>
           ))}
 
+        </div>
+
+        {/* View All */}
+        <div className="mt-14 text-center">
+          <Link to="/products">
+            <Button
+              variant="outline"
+              className="border-blue-700 px-8 py-6 text-blue-700 hover:bg-blue-700 hover:text-white"
+            >
+              View All Products
+            </Button>
+          </Link>
         </div>
 
       </div>
