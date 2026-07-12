@@ -138,7 +138,7 @@ export default function Navbar() {
     />
 
     {/* Drawer */}
-    <div className="absolute right-0 top-0 h-full w-72 bg-white shadow-2xl">
+    <div className="absolute right-0 top-0 h-full w-72 border-l border-slate-200 bg-[#ffffff] shadow-2xl">
 
       <div className="flex items-center justify-between border-b p-5">
         <h2 className="text-xl font-bold text-blue-700">
