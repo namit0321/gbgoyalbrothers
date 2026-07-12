@@ -2,12 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetTrigger,
-  SheetContent,
-  SheetTitle,
-} from "@/components/ui/sheet";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -72,61 +66,14 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Menu */}
-        <Sheet>
-          <SheetTrigger asChild>
-           <button
+{/* Mobile Menu Button */}
+<button
   onClick={() => setMenuOpen(true)}
   className="rounded-lg p-2 transition hover:bg-slate-100 lg:hidden"
 >
   <Menu className="h-7 w-7 text-slate-700" />
 </button>
-          </SheetTrigger>
-
-          <SheetContent side="right" className="w-[280px]">
-            <SheetTitle className="mb-6 text-2xl font-bold text-blue-700">
-              GB GOYAL BROTHERS
-            </SheetTitle>
-
-            <div className="flex flex-col gap-5">
-
-              <Link to="/" className="text-lg font-semibold">
-                Home
-              </Link>
-
-              <Link to="/products" className="text-lg font-semibold">
-                Products
-              </Link>
-
-              <Link to="/about" className="text-lg font-semibold">
-                About
-              </Link>
-
-              <Link to="/contact" className="text-lg font-semibold">
-                Contact
-              </Link>
-
-              <hr />
-
-              <a href="tel:+919311226400">
-                <Button
-                  variant="outline"
-                  className="w-full border-blue-700 text-blue-700"
-                >
-                  <Phone className="mr-2 h-4 w-4" />
-                  Call Now
-                </Button>
-              </a>
-
-              <Link to="/quote">
-                <Button className="w-full bg-blue-700 text-white">
-                  Request Quote
-                </Button>
-              </Link>
-
-            </div>
-          </SheetContent>
-        </Sheet>
+      
 
       </div>
       {menuOpen && (
@@ -188,7 +135,7 @@ export default function Navbar() {
           onClick={() => setMenuOpen(false)}
           className="border-b border-slate-200 py-4 text-lg font-semibold hover:text-blue-700"
         >
-          🏠 Home
+          Home
         </Link>
 
         <Link
@@ -196,7 +143,7 @@ export default function Navbar() {
           onClick={() => setMenuOpen(false)}
           className="border-b border-slate-200 py-4 text-lg font-semibold hover:text-blue-700"
         >
-          📦 Products
+         Products
         </Link>
 
         <Link
@@ -204,7 +151,7 @@ export default function Navbar() {
           onClick={() => setMenuOpen(false)}
           className="border-b border-slate-200 py-4 text-lg font-semibold hover:text-blue-700"
         >
-          ℹ️ About
+           About
         </Link>
 
         <Link
@@ -212,7 +159,7 @@ export default function Navbar() {
           onClick={() => setMenuOpen(false)}
           className="border-b border-slate-200 py-4 text-lg font-semibold hover:text-blue-700"
         >
-          📞 Contact
+           Contact
         </Link>
 
       </div>
