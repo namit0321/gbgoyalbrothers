@@ -5,12 +5,15 @@ import Footer from "../components/layout/Footer";
 import FloatingWhatsApp from "../components/layout/FloatingWhatsApp";
 import FloatingIndiaMart from "../components/layout/FloatingIndiaMart";
 import FloatingMaps from "../components/layout/FloatingMaps";
+import { useLocation } from "react-router-dom";
 
 interface MainLayoutProps {
   children: ReactNode;
 }
 
 export default function MainLayout({ children }: MainLayoutProps) {
+  const location = useLocation();
+const isHomePage = location.pathname === "/";
   return (
     <div className="flex min-h-screen flex-col bg-slate-50">
       {/* Navigation */}
@@ -21,10 +24,14 @@ export default function MainLayout({ children }: MainLayoutProps) {
         {children}
       </main>
 
-      {/* Floating Buttons */}
-      <FloatingMaps />
-      <FloatingIndiaMart />
-      <FloatingWhatsApp />
+      {/* Floating Buttons - Home Page Only */}
+{isHomePage && (
+  <>
+    <FloatingMaps />
+    <FloatingIndiaMart />
+    <FloatingWhatsApp />
+  </>
+)}
 
       {/* Footer */}
       <Footer />
