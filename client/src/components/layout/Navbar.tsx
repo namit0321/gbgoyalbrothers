@@ -135,26 +135,26 @@ export default function Navbar() {
     {/* Dark Overlay */}
     <div
       onClick={() => setMenuOpen(false)}
-      className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
+      className="absolute inset-0 bg-black/40 transition-opacity duration-300"
     />
 
     {/* Drawer */}
-    <div
-      className="
-        absolute
-        top-0
-        right-0
-        h-screen
-        w-[85%]
-        max-w-[340px]
-        bg-white
-        shadow-2xl
-        border-l
-        border-slate-200
-        animate-[slideIn_.25s_ease]
-      "
-    >
-
+    
+     <div
+  className="
+    absolute
+    z-10
+    top-0
+    right-0
+    h-screen
+    w-[85%]
+    max-w-[340px]
+    bg-white
+    border-l
+    border-slate-200
+    shadow-2xl
+  "
+>
       {/* Header */}
       <div className="flex items-center justify-between border-b px-6 py-5">
 
