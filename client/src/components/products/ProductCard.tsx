@@ -25,10 +25,15 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Product Image */}
         <div className="overflow-hidden bg-gradient-to-b from-slate-50 to-white">
           <img
-            src={product.image}
-            alt={product.name}
-            className="h-80 w-full object-contain p-6 transition-all duration-700 group-hover:scale-105 group-hover:rotate-1"
-          />
+  src={product.image}
+  alt={product.name}
+  loading="lazy"
+  decoding="async"
+  draggable={false}
+  width={400}
+  height={400}
+  className="h-80 w-full object-contain p-6 transition-all duration-700 group-hover:scale-105 group-hover:rotate-1"
+/>
         </div>
 
         {/* Content */}
