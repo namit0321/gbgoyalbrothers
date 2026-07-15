@@ -16,7 +16,7 @@ export default function Footer() {
             © 2026 GB Goyal Brothers. All Rights Reserved.
           </p>
 
-          <p className="mt-2 text-sm text-slate-500">
+          <p className="mt-2 text-sm text-slate-300">
   Website Designed &amp; Developed by{" "}
   <a
     href="https://www.linkedin.com/in/namit-goyal-4a05773b9/"

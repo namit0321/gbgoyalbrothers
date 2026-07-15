@@ -18,13 +18,15 @@ Thank you.`
       href={`https://wa.me/${phone}?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Chat with GB Goyal Brothers on WhatsApp"
       className="fixed bottom-6 right-6 z-50"
     >
-      <div className="flex items-center gap-2 rounded-full bg-green-600 px-4 py-3 text-sm text-white shadow-2xl transition hover:scale-105 hover:bg-green-700 md:gap-3 md:px-5 md:py-4 md:text-base">
-        <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />
-        <span className="font-semibold">
-          WhatsApp
-        </span>
+      <div className="flex items-center gap-2 rounded-full bg-green-700 px-4 py-3 text-sm font-medium text-white shadow-2xl transition hover:scale-105 hover:bg-green-800 md:gap-3 md:px-5 md:py-4 md:text-base">
+        <MessageCircle
+          className="h-5 w-5 md:h-6 md:w-6"
+          aria-hidden="true"
+        />
+        <span>WhatsApp</span>
       </div>
     </a>
   );

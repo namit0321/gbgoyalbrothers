@@ -54,7 +54,10 @@ export default function Navbar() {
               variant="outline"
               className="border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white"
             >
-              <Phone className="mr-2 h-4 w-4" />
+              <Phone
+  aria-hidden="true"
+  className="mr-2 h-4 w-4"
+/>
               Call Now
             </Button>
           </a>
@@ -68,10 +71,14 @@ export default function Navbar() {
 
 {/* Mobile Menu Button */}
 <button
+  aria-label="Open navigation menu"
   onClick={() => setMenuOpen(true)}
   className="rounded-lg p-2 transition hover:bg-slate-100 lg:hidden"
 >
-  <Menu className="h-7 w-7 text-slate-700" />
+  <Menu
+  aria-hidden="true"
+  className="h-7 w-7 text-slate-700"
+/>
 </button>
       
 
@@ -117,10 +124,11 @@ export default function Navbar() {
 
         </div>
 
-        <button
-          onClick={() => setMenuOpen(false)}
-          className="rounded-full p-2 transition hover:bg-slate-100"
-        >
+       <button
+  aria-label="Close navigation menu"
+  onClick={() => setMenuOpen(false)}
+  className="rounded-full p-2 transition hover:bg-slate-100"
+>
           <span className="text-3xl leading-none">×</span>
         </button>
 
