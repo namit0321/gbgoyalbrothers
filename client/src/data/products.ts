@@ -9845,7 +9845,7 @@ export const products: Product[] = [
   brand: "Aristo",
   category: "Dustbins",
   image: "/images/products/commercial-wheel-waste-bin-680l.jpg",
-  description: "680-litre commercial wheel waste bin for industrial and municipal use.",
+  description: "660-litre commercial wheel waste bin for industrial and municipal use.",
   featured: true,
 },
 
