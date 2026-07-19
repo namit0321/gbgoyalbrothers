@@ -9841,7 +9841,7 @@ export const products: Product[] = [
 
 {
   id: 975,
-  name: "Commercial Wheel Waste Bin 680L",
+  name: "Commercial Wheel Waste Bin 660L",
   brand: "Aristo",
   category: "Dustbins",
   image: "/images/products/commercial-wheel-waste-bin-680l.jpg",
